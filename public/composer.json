@@ -1,0 +1,15 @@
+{
+    "name": "xenot/app",
+    "authors": [
+        {
+            "name": "Indrawan Risangji",
+            "email": "risangji7@gmail.com"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "5.0.0-beta1",
+        "almasaeed2010/adminlte": "~3.0",
+        "components/jquery": "^3.5",
+        "components/font-awesome": "^5.15"
+    }
+}
