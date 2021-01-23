@@ -18,13 +18,6 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
-        <?php if (isset($data['admin'])) {
-        ?>
-          <p><?= $data['admin']['admin_nama'][0] ?></p>
-        <?php
-        }
-        ?>
-
         <table class="table table-striped table-inverse table-responsive">
           <thead class="thead-inverse">
             <tr>
@@ -39,7 +32,7 @@
           <tbody>
             <?php
             if (!empty($data['admin'])) {
-              $no = 1;
+              $no = 0;
               foreach ($data['admin'] as $admin) {
                 $no++;
             ?>
