@@ -6,10 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $data['judul']; ?></title>
 
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/<?= BASE_URL ?>/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
-  <!-- <link rel="stylesheet" href="<?= BASE_URL ?>/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
   <link rel="stylesheet" href="<?= BASE_URL ?>/css/adminlte.css">
+
+  <script src="<?= BASE_URL ?>/js/jquery.js"></script>
+  <script src="<?= BASE_URL ?>/js/bootstrap.bundle.js"></script>
+  <script src="<?= BASE_URL ?>/js/adminlte.js"></script>
+  <script src="<?= BASE_URL ?>/js/bootbox.min.js"></script>
 
 </head>
 

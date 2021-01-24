@@ -34,7 +34,7 @@
                   <td><?= $data['admin']['admin_nama'] ?></td>
                 </tr>
                 <tr>
-                  <th>Username</th>
+                  <th>Nama Pengguna</th>
                   <th>:</th>
                   <td><?= $data['admin']['admin_username'] ?></td>
                 </tr>
@@ -52,9 +52,9 @@
             </table>
 
           </div>
-          <div class="card-footer text-muted">
-            <a class="btn btn-primary" href="<?= BASE_URL ?>/admin/" role="button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
-            <a class="btn btn-primary" href="<?= BASE_URL ?>/admin/edit/<?= $admin['admin_id'] ?>" role="button"><i class="fa fa-edit" aria-hidden="true"></i> Ubah</a>
+          <div class="card-footer text-muted text-right">
+            <a class="btn btn-primary float-left" href="<?= BASE_URL ?>/admin/" role="button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
+            <a class="btn btn-primary float-right col-lg-4" href="<?= BASE_URL ?>/admin/edit/<?= $admin['admin_id'] ?>" role="button"><i class="fa fa-edit" aria-hidden="true"></i> Ubah</a>
           </div>
         </div>
 
