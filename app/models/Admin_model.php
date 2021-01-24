@@ -15,4 +15,11 @@ class Admin_model
     $this->db->query('SELECT * FROM ' . $this->table);
     return $this->db->resultSet();
   }
+
+  public function getAdminById($id)
+  {
+    $this->db->query('SELECT * FROM ' . $this->table . ' WHERE admin_id=:admin_id');
+    $this->db->bind('admin_id', $id);
+    return $this->db->single();
+  }
 }
