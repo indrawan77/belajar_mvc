@@ -64,4 +64,38 @@ class Admin_model
 
     return $this->db->rowCount();
   }
+
+  public function editAdmin($data)
+  {
+
+    if (empty($data['admin_password']) && empty($data['admin_password_confirmation'])) {
+      $query = "UPDATE admin SET 
+    admin_username=:admin_username, 
+    admin_nama=:admin_nama, 
+    admin_email=:admin_email, 
+    admin_hp=:admin_hp 
+    WHERE admin_id=:admin_id";
+    } else {
+      $query = "UPDATE admin SET 
+    admin_username=:admin_username, 
+    admin_nama=:admin_nama, 
+    admin_email=:admin_email, 
+    admin_hp=:admin_hp,
+    admin_password=:admin_password 
+    WHERE admin_id=:admin_id";
+    }
+
+
+    $this->db->query($query);
+    $this->db->bind('admin_username', $data['admin_username']);
+    $this->db->bind('admin_nama', $data['admin_nama']);
+    $this->db->bind('admin_email', $data['admin_email']);
+    $this->db->bind('admin_hp', $data['admin_hp']);
+    $this->db->bind('admin_password', $data['admin_password']);
+    $this->db->bind('admin_id', $data['admin_id']);
+
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
 }
