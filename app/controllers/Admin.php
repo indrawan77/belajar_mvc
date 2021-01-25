@@ -134,15 +134,7 @@ class Admin extends Controller
 
   public function delete()
   {
-    if ($this->model('Admin_model')->deleteAdmin($_POST['id']) > 0) {
-      //   Flasher::setFlash('berhasil', 'dihapus', 'success');
-      //   header('Location: ' . BASE_URL . '/admin');
-      //   exit;
-      // } else {
-      //   Flasher::setFlash('gagal', 'dihapus', 'danger');
-      //   header('Location: ' . BASE_URL . '/admin');
-      //   exit;
-    }
+    $this->model('Admin_model')->deleteAdmin($_POST['id']) > 0;
   }
 
   public function edit($id)

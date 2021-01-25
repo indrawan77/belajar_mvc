@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'bae1f45588391bde3b8c1623257e76e1cb5b64a8',
     'name' => 'xenot/app',
   ),
   'versions' => 
@@ -38,6 +38,15 @@
       ),
       'reference' => 'b33e8f0f9a1cb2ae390cf05d766a900b53d2125b',
     ),
+    'jasongrimes/paginator' => 
+    array (
+      'pretty_version' => '1.0.3',
+      'version' => '1.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3411e3cd0c6479a0b514f26e4358f0273552f221',
+    ),
     'twbs/bootstrap' => 
     array (
       'pretty_version' => 'v5.0.0-beta1',
@@ -56,12 +65,12 @@
     ),
     'xenot/app' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'bae1f45588391bde3b8c1623257e76e1cb5b64a8',
     ),
   ),
 );

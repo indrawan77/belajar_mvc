@@ -10,6 +10,7 @@
         "twbs/bootstrap": "5.0.0-beta1",
         "almasaeed2010/adminlte": "~3.0",
         "components/jquery": "^3.5",
-        "components/font-awesome": "^5.15"
+        "components/font-awesome": "^5.15",
+        "jasongrimes/paginator": "~1.0"
     }
 }

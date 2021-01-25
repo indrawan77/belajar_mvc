@@ -6,6 +6,16 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit6f999782a3b70cf732db3da041c98c6c
 {
+    public static $prefixesPsr0 = array (
+        'J' => 
+        array (
+            'JasonGrimes' => 
+            array (
+                0 => __DIR__ . '/..' . '/jasongrimes/paginator/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -13,6 +23,7 @@ class ComposerStaticInit6f999782a3b70cf732db3da041c98c6c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixesPsr0 = ComposerStaticInit6f999782a3b70cf732db3da041c98c6c::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit6f999782a3b70cf732db3da041c98c6c::$classMap;
 
         }, null, ClassLoader::class);
