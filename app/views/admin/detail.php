@@ -21,9 +21,6 @@
       <div class="col-lg-12">
 
         <div class="card">
-          <div class="card-header">
-            <h4>Detail Admin</h4>
-          </div>
           <div class="card-body">
 
             <table class="table table-borderless table-responsive">

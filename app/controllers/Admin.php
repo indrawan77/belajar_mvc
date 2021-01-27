@@ -4,7 +4,39 @@ class Admin extends Controller
 {
   public function index()
   {
-    $data['admin'] = $this->model('Admin_model')->getAllAdmin();
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+      $url = "https://";
+    } else {
+      $url = "http://";
+      // Append the host(domain name, ip) to the URL.   
+      $url .= $_SERVER['HTTP_HOST'];
+
+      // Append the requested resource location to the URL   
+      $url .= $_SERVER['REQUEST_URI'];
+    }
+
+    // Use parse_url() function to parse the URL  
+    // and return an associative array which 
+    // contains its various components
+    $url_components = parse_url($url);
+
+    // Use parse_str() function to parse the 
+    // string passed via URL 
+    parse_str(isset($url_components['query']) ? $url_components['query'] : '', $params);
+
+    //ambil parameter yang mau dipake
+    $page = isset($params['page']) ? $params['page'] : '';
+
+    $count = $this->model('Admin_model')->countAllAdmin();
+    $data['pagination'] = new \yidas\data\Pagination([
+      'totalCount' => $count,
+      'page' => $page,
+      'perPage' => 10,
+    ]);
+    $data['offset'] = $data['pagination']->offset;
+    $data['limit'] = $data['pagination']->limit;
+
+    $data['admin'] = $this->model('Admin_model')->getAllAdminx($data);
     $data['judul'] = 'List Admin';
     $this->view('templates/header', $data);
     $this->view('admin/index', $data);

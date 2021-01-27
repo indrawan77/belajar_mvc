@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'bae1f45588391bde3b8c1623257e76e1cb5b64a8',
+    'reference' => '224532403c21a55b2d0b468a6e976dcb21aefe36',
     'name' => 'xenot/app',
   ),
   'versions' => 
@@ -93,7 +93,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'bae1f45588391bde3b8c1623257e76e1cb5b64a8',
+      'reference' => '224532403c21a55b2d0b468a6e976dcb21aefe36',
+    ),
+    'yidas/pagination' => 
+    array (
+      'pretty_version' => '1.0.6',
+      'version' => '1.0.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b340639a535227891cb8f52b79877a95e6586702',
     ),
   ),
 );

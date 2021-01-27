@@ -21,9 +21,6 @@
       <div class="col-lg-12">
 
         <div class="card">
-          <div class="card-header">
-            <h4><?= $data['sub_judul'] ?></h4>
-          </div>
           <div class="card-body">
 
             <form action="<?= BASE_URL ?>/admin/add" method="POST">

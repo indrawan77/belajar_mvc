@@ -6,6 +6,20 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit6f999782a3b70cf732db3da041c98c6c
 {
+    public static $prefixLengthsPsr4 = array (
+        'y' => 
+        array (
+            'yidas\\' => 6,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'yidas\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yidas/pagination/src',
+        ),
+    );
+
     public static $prefixesPsr0 = array (
         'J' => 
         array (
@@ -23,6 +37,8 @@ class ComposerStaticInit6f999782a3b70cf732db3da041c98c6c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6f999782a3b70cf732db3da041c98c6c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6f999782a3b70cf732db3da041c98c6c::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit6f999782a3b70cf732db3da041c98c6c::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit6f999782a3b70cf732db3da041c98c6c::$classMap;
 

@@ -4,6 +4,7 @@ class Admin_model
 {
   private $table = 'admin';
   private $db;
+  private $pagination;
 
   public function __construct()
   {
@@ -14,6 +15,33 @@ class Admin_model
   {
     $this->db->query('SELECT * FROM ' . $this->table . ' WHERE admin_deleted=:admin_deleted');
     $this->db->bind('admin_deleted', 0);
+
+    $this->db->execute();
+
+    return $this->db->resultSet();
+  }
+
+  public function countAllAdmin()
+  {
+    $this->db->query('SELECT * FROM ' . $this->table . ' WHERE admin_deleted=:admin_deleted');
+    $this->db->bind('admin_deleted', 0);
+
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
+
+  public function getAllAdminx($data)
+  {
+    // $this->db->query('SELECT * FROM ' . $this->table . ' WHERE admin_deleted=:admin_deleted LIMIT ' . $data['offset'] . ', ' . $data['limit'] . '');
+    $query = 'SELECT * FROM ' . $this->table . ' WHERE admin_deleted=:admin_deleted LIMIT :awalData, :jumlahDataPerHalaman';
+    $this->db->query($query);
+    $this->db->bind('admin_deleted', 0);
+    $this->db->bind('awalData', $data['offset']);
+    $this->db->bind('jumlahDataPerHalaman', $data['limit']);
+
+    $this->db->execute();
+
     return $this->db->resultSet();
   }
 
@@ -21,6 +49,9 @@ class Admin_model
   {
     $this->db->query('SELECT * FROM ' . $this->table . ' WHERE admin_id=:admin_id');
     $this->db->bind('admin_id', $id);
+
+    $this->db->execute();
+
     return $this->db->single();
   }
 
@@ -28,7 +59,9 @@ class Admin_model
   {
     $this->db->query('SELECT * FROM ' . $this->table . ' WHERE admin_username=:admin_username');
     $this->db->bind('admin_username', $username);
+
     $this->db->execute();
+
     if ($this->db->rowCount() > 0) {
       return true;
     } else {
@@ -38,7 +71,7 @@ class Admin_model
 
   public function addAdmin($data)
   {
-    $query = "INSERT INTO admin VALUES ('', :admin_username, :admin_nama, :admin_email, :admin_hp, :admin_password, '')";
+    $query = "INSERT INTO ' . $this->table . ' VALUES ('', :admin_username, :admin_nama, :admin_email, :admin_hp, :admin_password, '')";
 
     $this->db->query($query);
     $this->db->bind('admin_username', $data['admin_username']);
@@ -54,7 +87,7 @@ class Admin_model
 
   public function deleteAdmin($id)
   {
-    $query = "UPDATE admin SET admin_deleted=:admin_deleted WHERE admin_id=:admin_id";
+    $query = "UPDATE ' . $this->table . ' SET admin_deleted=:admin_deleted WHERE admin_id=:admin_id";
 
     $this->db->query($query);
     $this->db->bind('admin_deleted', 1);
@@ -69,14 +102,14 @@ class Admin_model
   {
 
     if (empty($data['admin_password']) && empty($data['admin_password_confirmation'])) {
-      $query = "UPDATE admin SET 
+      $query = "UPDATE ' . $this->table . ' SET 
     admin_username=:admin_username, 
     admin_nama=:admin_nama, 
     admin_email=:admin_email, 
     admin_hp=:admin_hp 
     WHERE admin_id=:admin_id";
     } else {
-      $query = "UPDATE admin SET 
+      $query = "UPDATE ' . $this->table . ' SET 
     admin_username=:admin_username, 
     admin_nama=:admin_nama, 
     admin_email=:admin_email, 
